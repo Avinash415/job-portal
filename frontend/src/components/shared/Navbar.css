@@ -1,0 +1,142 @@
+/* Navbar.css */
+
+.navbar-wrapper {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  height: 4rem;
+  padding: 0 1.5rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.logo-highlight {
+  color: #6A38C2;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.navbar-menu li a:hover {
+  color: #6A38C2;
+  transition: color 0.3s ease;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.login-btn {
+  border-radius: 9999px;
+  padding: 0.375rem 1.25rem;
+}
+
+.signup-btn {
+  background-color: #6A38C2;
+  color: white;
+  border-radius: 9999px;
+  padding: 0.375rem 1.25rem;
+}
+
+.signup-btn:hover {
+  background-color: #5b30a6;
+}
+
+.avatar-hover {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  ring: 2px solid #6A38C2;
+}
+
+.avatar-hover:hover {
+  transform: scale(1.05);
+}
+
+.popover-content {
+  width: 20rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.popover-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatar-ring {
+  width: 3rem;
+  height: 3rem;
+  ring: 2px solid #6A38C2;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.user-bio {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.popover-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-link {
+  color: #6A38C2;
+  padding: 0;
+}
+
+.profile-link:hover {
+  text-decoration: underline;
+}
+
+.logout-link {
+  color: #ef4444;
+  padding: 0;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
