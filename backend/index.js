@@ -36,7 +36,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Define the port number (from .env or default to 3000)
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 // API route mappings (versioned as /api/v1)
 app.use("/api/v1/user", userRoute);           // Routes for user authentication & management
@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the server and connect to the database
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     connectDB(); // Establish connection to PostgreSQL or MongoDB (as per your setup)
     console.log(`Server running at port ${PORT}`);
 });
