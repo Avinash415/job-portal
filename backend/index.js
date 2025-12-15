@@ -49,6 +49,13 @@ app.get('/', (req, res) => {
   res.send('Job Portal Backend is running ✅');
 });
 
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
+});
 // Start the server and connect to the database
 app.listen(PORT, "0.0.0.0", () => {
     connectDB(); // Establish connection to PostgreSQL or MongoDB (as per your setup)
