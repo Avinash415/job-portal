@@ -125,19 +125,26 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const logoutHandler = async () => {
-    try {
-      const res = await axios.get(`${USER_API_END_POINT}/logout`, { withCredentials: true });
-      if (res.data.success) {
-        dispatch(setUser(null));
-        navigate('/');
-        toast.success(res.data.message);
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error(error.response.data.message);
-    }
-  };
+ const logoutHandler = async () => {
+  try {
+    // Optional backend logout (do NOT depend on it)
+    await axios.get(`${USER_API_END_POINT}/logout`, {
+      withCredentials: true,
+    });
+  } catch (error) {
+    console.warn("Backend logout failed, logging out locally");
+  } finally {
+    // ✅ Always clear frontend auth
+    dispatch(setUser(null));
+
+    localStorage.clear();
+    sessionStorage.clear();
+
+    navigate("/login");
+    toast.success("Logged out successfully");
+  }
+};
+
 
   return (
     <div className='bg-white shadow-sm sticky top-0 z-50 transition-all duration-300'>
