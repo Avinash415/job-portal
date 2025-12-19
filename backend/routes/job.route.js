@@ -21,7 +21,7 @@ router.route("/post").post(isAuthenticated, postJob);
  * @desc    Get all available jobs (Students)
  * @access  Private
  */
-router.route("/get").get(isAuthenticated, getAllJobs);
+router.route("/get").get(getAllJobs);
 
 /**
  * @route   GET /api/v1/job/getadminjobs
